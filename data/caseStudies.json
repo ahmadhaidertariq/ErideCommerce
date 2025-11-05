@@ -1,0 +1,209 @@
+{
+  "caseStudies": [
+    {
+      "id": 1,
+      "slug": "tools-home-improvement-power-tools-revenue-growth",
+      "title": "Tools & Home Improvement: Power Tools Revenue Growth",
+      "clientName": "Home Improvement Brand",
+      "industry": "Tools & Home Improvement",
+      "category": "Tools & Home Improvement",
+      "duration": "6 months",
+      "product": "Premium Power Tool Set",
+      "before": {
+        "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800",
+        "monthlyRevenue": 45000,
+        "profitMargin": 12,
+        "acos": 38,
+        "conversionRate": 8.5,
+        "organicRank": 45
+      },
+      "after": {
+        "image": "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=800",
+        "monthlyRevenue": 117350,
+        "profitMargin": 24,
+        "acos": 22,
+        "conversionRate": 15.2,
+        "organicRank": 8
+      },
+      "highlights": [
+        "163% revenue increase",
+        "100% improvement in profit margins",
+        "42% reduction in ACOS",
+        "Top 10 organic ranking achieved"
+      ],
+      "challenge": "The brand was struggling with high ACOS and low conversion rates, making it difficult to scale profitably. Their organic rankings were suffering due to poor listing optimization.",
+      "solution": "We implemented a comprehensive strategy including listing optimization, strategic PPC restructuring, and brand content enhancement. This included A+ Content, enhanced brand storytelling, and targeted keyword optimization.",
+      "results": [
+        "Monthly revenue increased from $45,000 to $117,350",
+        "Profit margins doubled from 12% to 24%",
+        "ACOS reduced from 38% to 22%",
+        "Organic ranking improved from #45 to #8",
+        "Conversion rate increased from 8.5% to 15.2%"
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "health-personal-care-multivitamin-sales-growth",
+      "title": "Health & Personal Care: Multivitamin Sales Growth",
+      "clientName": "Health & Wellness Brand",
+      "industry": "Health & Personal Care",
+      "category": "Health & Personal Care",
+      "duration": "4 months",
+      "product": "Premium Multivitamin 45mg 90ct",
+      "before": {
+        "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800",
+        "monthlyRevenue": 28000,
+        "profitMargin": 15,
+        "acos": 35,
+        "conversionRate": 9.2,
+        "organicRank": 62
+      },
+      "after": {
+        "image": "https://images.unsplash.com/photo-1576091160550-2173dba999e8?w=800",
+        "monthlyRevenue": 72800,
+        "profitMargin": 28,
+        "acos": 18,
+        "conversionRate": 16.8,
+        "organicRank": 12
+      },
+      "highlights": [
+        "160% revenue growth",
+        "87% profit margin improvement",
+        "49% ACOS reduction",
+        "Top 15 organic ranking"
+      ],
+      "challenge": "The supplement brand faced intense competition in the multivitamin category. Low organic visibility and inefficient PPC spend were preventing growth.",
+      "solution": "We focused on category-specific optimization, including detailed product descriptions, compliance-focused content, and strategic review management. PPC campaigns were restructured to target high-intent keywords with lower competition.",
+      "results": [
+        "Revenue grew from $28,000 to $72,800 monthly",
+        "Profit margins improved from 15% to 28%",
+        "ACOS reduced dramatically from 35% to 18%",
+        "Achieved top 15 organic ranking",
+        "Conversion rate improved from 9.2% to 16.8%"
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "sports-outdoors-resistance-band-growth",
+      "title": "Sports & Outdoors: Resistance Band Equipment Growth",
+      "clientName": "Fitness Brand",
+      "industry": "Sports & Outdoors",
+      "category": "Sports & Outdoors",
+      "duration": "7 months",
+      "product": "Professional Resistance Band Set",
+      "before": {
+        "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800",
+        "monthlyRevenue": 55000,
+        "profitMargin": 14,
+        "acos": 36,
+        "conversionRate": 8.2,
+        "organicRank": 52
+      },
+      "after": {
+        "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800",
+        "monthlyRevenue": 143000,
+        "profitMargin": 26,
+        "acos": 20,
+        "conversionRate": 16.8,
+        "organicRank": 9
+      },
+      "highlights": [
+        "160% revenue growth",
+        "86% profit margin improvement",
+        "44% ACOS reduction",
+        "Top 10 organic ranking"
+      ],
+      "challenge": "The fitness brand was operating in a competitive space with high ad costs. Their product listings lacked clear differentiation and instructional content that fitness customers expect.",
+      "solution": "We created detailed product demonstrations, added usage guides, and optimized for fitness-specific search terms. PPC strategy focused on seasonal fitness trends and long-tail keywords with better ROI.",
+      "results": [
+        "Monthly revenue increased from $55,000 to $143,000",
+        "Profit margins improved from 14% to 26%",
+        "ACOS reduced from 36% to 20%",
+        "Achieved top 10 organic ranking",
+        "Conversion rate increased from 8.2% to 16.8%"
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "beauty-personal-care-face-serum-optimization",
+      "title": "Beauty & Personal Care: Face Serum Product Optimization",
+      "clientName": "Beauty Brand",
+      "industry": "Beauty & Personal Care",
+      "category": "Beauty & Personal Care",
+      "duration": "5 months",
+      "product": "Premium Face Serum with Vitamin C",
+      "before": {
+        "image": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800",
+        "monthlyRevenue": 32000,
+        "profitMargin": 20,
+        "acos": 30,
+        "conversionRate": 7.8,
+        "organicRank": 38
+      },
+      "after": {
+        "image": "https://images.unsplash.com/photo-1556228578-af9596215c58?w=800",
+        "monthlyRevenue": 89600,
+        "profitMargin": 35,
+        "acos": 16,
+        "conversionRate": 14.5,
+        "organicRank": 6
+      },
+      "highlights": [
+        "180% revenue increase",
+        "75% profit margin improvement",
+        "47% ACOS reduction",
+        "Top 10 organic ranking"
+      ],
+      "challenge": "The beauty brand was struggling with brand positioning in a saturated market. Their listings didn't effectively communicate product benefits and reviews were mixed.",
+      "solution": "We developed a comprehensive brand story, enhanced visual content with lifestyle imagery, and implemented a review management strategy. PPC campaigns were optimized for beauty-specific keywords with higher conversion rates.",
+      "results": [
+        "Monthly revenue grew from $32,000 to $89,600",
+        "Profit margins increased from 20% to 35%",
+        "ACOS reduced from 30% to 16%",
+        "Achieved top 10 organic ranking",
+        "Conversion rate improved from 7.8% to 14.5%"
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "grocery-gourmet-food-premium-product-scaling",
+      "title": "Grocery & Gourmet Food: Premium Product Scaling",
+      "clientName": "Gourmet Food Brand",
+      "industry": "Grocery & Gourmet Food",
+      "category": "Grocery & Gourmet Food",
+      "duration": "8 months",
+      "product": "Premium Organic Coffee Blend",
+      "before": {
+        "image": "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800",
+        "monthlyRevenue": 38000,
+        "profitMargin": 16,
+        "acos": 33,
+        "conversionRate": 9.1,
+        "organicRank": 48
+      },
+      "after": {
+        "image": "https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=800",
+        "monthlyRevenue": 98800,
+        "profitMargin": 29,
+        "acos": 17,
+        "conversionRate": 17.2,
+        "organicRank": 7
+      },
+      "highlights": [
+        "160% revenue growth",
+        "81% profit margin improvement",
+        "48% ACOS reduction",
+        "Top 10 organic ranking"
+      ],
+      "challenge": "The gourmet food brand needed to differentiate in a crowded category. Their listings lacked compelling storytelling and didn't highlight the premium quality that justified higher pricing.",
+      "solution": "We created rich product narratives emphasizing quality and origin, optimized for gourmet-specific search terms, and implemented a strategic PPC approach targeting food enthusiasts and gift buyers.",
+      "results": [
+        "Monthly revenue increased from $38,000 to $98,800",
+        "Profit margins improved from 16% to 29%",
+        "ACOS reduced from 33% to 17%",
+        "Achieved top 10 organic ranking",
+        "Conversion rate improved from 9.1% to 17.2%"
+      ]
+    }
+  ]
+}

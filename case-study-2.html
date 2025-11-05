@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Case Study - Eridecommerce</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .case-study-hero {
+            background: linear-gradient(135deg, var(--primary-600), var(--secondary-600));
+            color: white;
+            padding: 120px 0 60px;
+        }
+        .case-study-hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .case-study-breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.875rem;
+        }
+        .case-study-breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+        .case-study-breadcrumb a:hover {
+            color: white;
+        }
+        .case-study-breadcrumb i {
+            font-size: 0.75rem;
+        }
+        .case-study-main-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .case-study-meta-info {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .case-study-content {
+            padding: 4rem 0;
+        }
+        .case-study-section {
+            margin-bottom: 4rem;
+        }
+        .case-study-section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--gray-900);
+        }
+        .case-study-before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .before-after-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .before-after-header {
+            padding: 1rem 1.5rem;
+            background: var(--gray-50);
+            border-bottom: 2px solid var(--gray-200);
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+        .before-after-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .before-after-metrics {
+            padding: 1.5rem;
+        }
+        .metric-comparison {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .metric-comparison:last-child {
+            border-bottom: none;
+        }
+        .metric-name {
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+        .metric-value {
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .result-card {
+            background: linear-gradient(135deg, #e6f0f7, #fff4e6);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+        }
+        .result-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-600);
+            margin-bottom: 0.5rem;
+        }
+        .result-label {
+            color: var(--gray-700);
+            font-weight: 500;
+        }
+        .challenge-solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        .challenge-card,
+        .solution-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .challenge-card {
+            border-left: 4px solid #003d82;
+        }
+        .solution-card {
+            border-left: 4px solid var(--accent-500);
+        }
+        .results-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+        .results-list li {
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            background: var(--gray-50);
+            border-radius: 0.5rem;
+            border-left: 4px solid var(--primary-600);
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+        }
+        .results-list li i {
+            color: var(--primary-600);
+            margin-top: 0.25rem;
+        }
+        @media (max-width: 968px) {
+            .case-study-before-after,
+            .challenge-solution-grid {
+                grid-template-columns: 1fr;
+            }
+            .case-study-main-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">Eridecommerce</a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="before-and-after.html">Before & After</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="contact.html" class="btn-primary">Get Started</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="case-study-hero" id="caseStudyHero">
+        <div class="container">
+            <div class="case-study-hero-content">
+                <div class="case-study-breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <a href="case-studies.html">Case Studies</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span id="breadcrumbTitle">Case Study</span>
+                </div>
+                <h1 class="case-study-main-title" id="caseStudyTitle">Loading...</h1>
+                <div class="case-study-meta-info" id="caseStudyMeta">
+                    <!-- Meta info loaded via JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="case-study-content">
+        <div class="container">
+            <div class="case-study-section">
+                <h2 class="case-study-section-title">Before & After</h2>
+                <div class="case-study-before-after" id="beforeAfterSection">
+                    <!-- Before/After loaded via JS -->
+                </div>
+            </div>
+
+            <div class="case-study-section">
+                <h2 class="case-study-section-title">The Challenge</h2>
+                <div class="challenge-solution-grid">
+                    <div class="challenge-card">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: #003d82;">
+                            <i class="fas fa-exclamation-triangle"></i> The Problem
+                        </h3>
+                        <p id="challengeText" style="color: var(--gray-700); line-height: 1.8;">Loading...</p>
+                    </div>
+                    <div class="solution-card">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--accent-500);">
+                            <i class="fas fa-lightbulb"></i> Our Solution
+                        </h3>
+                        <p id="solutionText" style="color: var(--gray-700); line-height: 1.8;">Loading...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study-section">
+                <h2 class="case-study-section-title">Key Results</h2>
+                <div class="results-grid" id="resultsGrid">
+                    <!-- Results loaded via JS -->
+                </div>
+                <ul class="results-list" id="resultsList">
+                    <!-- Results list loaded via JS -->
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Achieve Similar Results?</h2>
+            <p>Let's discuss how we can help transform your Amazon business.</p>
+            <a href="contact.html" class="btn-primary">Get Started Today</a>
+        </div>
+    </section>
+
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <i class="fas fa-envelope newsletter-icon"></i>
+                <h2>Stay Updated with Amazon Growth Strategies</h2>
+                <p>Get exclusive insights, case studies, and tips delivered to your inbox.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn-primary">Subscribe</button>
+                </form>
+                <p class="newsletter-disclaimer">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <h3 class="footer-logo">Eridecommerce</h3>
+                    <p>Helping Amazon brands scale profitably through expert Private Label & Wholesale Management.</p>
+                    <div class="footer-contact">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@eridecommerce.com">info@eridecommerce.com</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Eridecommerce. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-btn" id="chatBtn"><i class="fas fa-comments"></i></button>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <h3>Chat with Us</h3>
+                <button class="chat-close" id="chatClose"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-body">
+                <div class="chat-message">
+                    <p>Hi! 👋 How can we help you grow your Amazon business today?</p>
+                </div>
+                <p class="chat-info">Type your message below or email us at <a href="mailto:info@eridecommerce.com">info@eridecommerce.com</a></p>
+            </div>
+            <div class="chat-footer">
+                <input type="text" placeholder="Type your message...">
+                <button class="chat-send"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Get case study ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const caseStudyId = urlParams.get('id') || window.location.pathname.match(/case-study-(\d+)/)?.[1] || '1';
+        
+        // Load case study data
+        fetch('data/caseStudies.json')
+            .then(response => response.json())
+            .then(data => {
+                const study = data.caseStudies.find(s => s.id == caseStudyId) || data.caseStudies[0];
+                loadCaseStudy(study);
+            })
+            .catch(error => {
+                console.error('Error loading case study:', error);
+            });
+        
+        function loadCaseStudy(study) {
+            const formatCurrency = (amount) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(amount);
+            const revenueIncrease = (((study.after.monthlyRevenue - study.before.monthlyRevenue) / study.before.monthlyRevenue) * 100).toFixed(0);
+            const profitIncrease = (((study.after.profitMargin - study.before.profitMargin) / study.before.profitMargin) * 100).toFixed(0);
+            const acosDecrease = (((study.before.acos - study.after.acos) / study.before.acos) * 100).toFixed(0);
+            
+            // Update title
+            document.getElementById('pageTitle').textContent = study.title + ' - Eridecommerce';
+            document.getElementById('caseStudyTitle').textContent = study.title;
+            document.getElementById('breadcrumbTitle').textContent = study.category;
+            
+            // Update meta info
+            document.getElementById('caseStudyMeta').innerHTML = `
+                <div class="meta-item">
+                    <i class="fas fa-tag"></i>
+                    <span>${study.category}</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-box"></i>
+                    <span>${study.product}</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-clock"></i>
+                    <span>${study.duration}</span>
+                </div>
+            `;
+            
+            // Update before/after
+            document.getElementById('beforeAfterSection').innerHTML = `
+                <div class="before-after-card">
+                    <div class="before-after-header">Before</div>
+                    <img src="${study.before.image}" alt="Before" class="before-after-image">
+                    <div class="before-after-metrics">
+                        <div class="metric-comparison">
+                            <span class="metric-name">Monthly Revenue</span>
+                            <span class="metric-value" style="color: var(--gray-600);">${formatCurrency(study.before.monthlyRevenue)}</span>
+                        </div>
+                        <div class="metric-comparison">
+                            <span class="metric-name">Profit Margin</span>
+                            <span class="metric-value" style="color: var(--gray-600);">${study.before.profitMargin}%</span>
+                        </div>
+                        <div class="metric-comparison">
+                            <span class="metric-name">ACOS</span>
+                            <span class="metric-value" style="color: #ff6b35;">${study.before.acos}%</span>
+                        </div>
+                        <div class="metric-comparison">
+                            <span class="metric-name">Organic Rank</span>
+                            <span class="metric-value" style="color: var(--gray-600);">#${study.before.organicRank}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="before-after-card">
+                    <div class="before-after-header">After</div>
+                    <img src="${study.after.image}" alt="After" class="before-after-image">
+                    <div class="before-after-metrics">
+                        <div class="metric-comparison">
+                            <span class="metric-name">Monthly Revenue</span>
+                            <span class="metric-value" style="color: #003d82;">${formatCurrency(study.after.monthlyRevenue)}</span>
+                        </div>
+                        <div class="metric-comparison">
+                            <span class="metric-name">Profit Margin</span>
+                            <span class="metric-value" style="color: #ff6b35;">${study.after.profitMargin}%</span>
+                        </div>
+                        <div class="metric-comparison">
+                            <span class="metric-name">ACOS</span>
+                            <span class="metric-value" style="color: #ff6b35;">${study.after.acos}%</span>
+                        </div>
+                        <div class="metric-comparison">
+                            <span class="metric-name">Organic Rank</span>
+                            <span class="metric-value" style="color: #003d82;">#${study.after.organicRank}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Update challenge and solution
+            document.getElementById('challengeText').textContent = study.challenge;
+            document.getElementById('solutionText').textContent = study.solution;
+            
+            // Update results grid
+            document.getElementById('resultsGrid').innerHTML = `
+                <div class="result-card">
+                    <div class="result-value" style="color: #003d82; font-size: 2.5rem;">+${revenueIncrease}%</div>
+                    <div class="result-label">Revenue Growth</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value" style="color: #ff6b35;">+${profitIncrease}%</div>
+                    <div class="result-label">Profit Margin</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value" style="color: #ff6b35;">-${acosDecrease}%</div>
+                    <div class="result-label">ACOS Reduction</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value" style="color: #003d82;">#${study.after.organicRank}</div>
+                    <div class="result-label">Organic Ranking</div>
+                </div>
+            `;
+            
+            // Update results list
+            document.getElementById('resultsList').innerHTML = study.results.map(r => `
+                <li>
+                    <i class="fas fa-check-circle"></i>
+                    <span>${r}</span>
+                </li>
+            `).join('');
+        }
+    </script>
+</body>
+</html>
+
+

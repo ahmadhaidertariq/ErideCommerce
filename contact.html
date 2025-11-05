@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Eridecommerce</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .contact-section {
+            padding: 5rem 0;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--gray-700);
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-600);
+            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.1);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .contact-info-card {
+            background: var(--gray-50);
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+        .contact-info-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .contact-info-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-100);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-600);
+            font-size: 1.25rem;
+        }
+        .contact-info-item h3 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .contact-info-item a {
+            color: var(--primary-600);
+            text-decoration: none;
+        }
+        .contact-info-item a:hover {
+            text-decoration: underline;
+        }
+        .process-steps {
+            background: var(--gray-50);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-top: 2rem;
+        }
+        .process-step {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .process-step:last-child {
+            margin-bottom: 0;
+        }
+        .process-step-number {
+            width: 32px;
+            height: 32px;
+            background: var(--primary-600);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .form-status {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            display: none;
+        }
+        .form-status.success {
+            background: #d1fae5;
+            color: #065f46;
+            display: block;
+        }
+        .form-status.error {
+            background: #fee2e2;
+            color: #991b1b;
+            display: block;
+        }
+        @media (max-width: 968px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">Eridecommerce</a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="contact.html" class="active">Contact Us</a></li>
+                    <li><a href="contact.html" class="btn-primary">Get Started</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Get In Touch</h1>
+            <p>Ready to scale your Amazon business? Let's discuss how we can help you achieve your goals.</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div>
+                    <h2 class="section-title">Send Us a Message</h2>
+                    <p style="color: var(--gray-600); margin-bottom: 2rem;">
+                        Fill out the form below and we'll get back to you within 24 hours. 
+                        For urgent inquiries, please email us directly at 
+                        <a href="mailto:info@eridecommerce.com" style="color: var(--primary-600);">info@eridecommerce.com</a>
+                    </p>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Company Name</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required placeholder="Tell us about your Amazon business and how we can help..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                        <div id="formStatus" class="form-status"></div>
+                    </form>
+                </div>
+                <div>
+                    <h2 class="section-title">Contact Information</h2>
+                    <div class="contact-info-card">
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3>Email</h3>
+                                <a href="mailto:info@eridecommerce.com">info@eridecommerce.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3>Response Time</h3>
+                                <p style="color: var(--gray-600);">We typically respond within 24 hours</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="process-steps">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem;">What Happens Next?</h3>
+                        <div class="process-step">
+                            <div class="process-step-number">1</div>
+                            <div>
+                                <h4 style="font-weight: 600; margin-bottom: 0.25rem;">We Review Your Inquiry</h4>
+                                <p style="color: var(--gray-600); font-size: 0.875rem;">Our team will carefully review your message and business needs.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">2</div>
+                            <div>
+                                <h4 style="font-weight: 600; margin-bottom: 0.25rem;">Schedule a Consultation</h4>
+                                <p style="color: var(--gray-600); font-size: 0.875rem;">We'll reach out to schedule a call to discuss your goals in detail.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">3</div>
+                            <div>
+                                <h4 style="font-weight: 600; margin-bottom: 0.25rem;">Custom Proposal</h4>
+                                <p style="color: var(--gray-600); font-size: 0.875rem;">We'll provide a tailored proposal based on your specific requirements.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">4</div>
+                            <div>
+                                <h4 style="font-weight: 600; margin-bottom: 0.25rem;">Get Started</h4>
+                                <p style="color: var(--gray-600); font-size: 0.875rem;">Once approved, we'll onboard you and begin transforming your Amazon business.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <h2 class="section-title">Have Questions?</h2>
+                <p style="font-size: 1.125rem; color: var(--gray-600); margin-bottom: 2rem;">
+                    Check out our FAQs page for answers to common questions, or reach out to us directly.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="faqs.html" class="btn-secondary">View FAQs</a>
+                    <a href="mailto:info@eridecommerce.com" class="btn-primary">Email Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <i class="fas fa-envelope newsletter-icon"></i>
+                <h2>Stay Updated with Amazon Growth Strategies</h2>
+                <p>Get exclusive insights, case studies, and tips delivered to your inbox.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn-primary">Subscribe</button>
+                </form>
+                <p class="newsletter-disclaimer">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <h3 class="footer-logo">Eridecommerce</h3>
+                    <p>Helping Amazon brands scale profitably through expert Private Label & Wholesale Management.</p>
+                    <div class="footer-contact">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@eridecommerce.com">info@eridecommerce.com</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Eridecommerce. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-btn" id="chatBtn"><i class="fas fa-comments"></i></button>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <h3>Chat with Us</h3>
+                <button class="chat-close" id="chatClose"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-body">
+                <div class="chat-message">
+                    <p>Hi! 👋 How can we help you grow your Amazon business today?</p>
+                </div>
+                <p class="chat-info">Type your message below or email us at <a href="mailto:info@eridecommerce.com">info@eridecommerce.com</a></p>
+            </div>
+            <div class="chat-footer">
+                <input type="text" placeholder="Type your message...">
+                <button class="chat-send"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Contact Form Handler
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    company: document.getElementById('company').value,
+                    message: document.getElementById('message').value
+                };
+                
+                // Create mailto link as fallback
+                const subject = encodeURIComponent('Contact Form Submission from Eridecommerce');
+                const body = encodeURIComponent(
+                    `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCompany: ${formData.company}\n\nMessage:\n${formData.message}`
+                );
+                
+                // Show success message
+                formStatus.className = 'form-status success';
+                formStatus.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! We\'ll get back to you within 24 hours.';
+                
+                // Open email client (you can replace this with actual email service integration)
+                window.location.href = `mailto:info@eridecommerce.com?subject=${subject}&body=${body}`;
+                
+                // Reset form after 3 seconds
+                setTimeout(() => {
+                    contactForm.reset();
+                    formStatus.className = 'form-status';
+                }, 3000);
+            });
+        }
+    </script>
+</body>
+</html>
+
+
+
+
