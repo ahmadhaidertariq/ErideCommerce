@@ -92,7 +92,7 @@ export default function Home() {
       <section className="section-container">
         <div className="text-center mb-12">
           <h2 className="section-title">Our Services</h2>
-          <p className="section-subtitle">
+          <p className="section-subtitle text-center">
             Comprehensive Amazon solutions designed to drive growth and maximize profitability
           </p>
         </div>
@@ -159,7 +159,7 @@ export default function Home() {
       <section className="section-container">
         <div className="text-center mb-12">
           <h2 className="section-title">Our Proven Process</h2>
-          <p className="section-subtitle">
+          <p className="section-subtitle text-center">
             A strategic approach that drives exponential growth for your Amazon brand
           </p>
         </div>

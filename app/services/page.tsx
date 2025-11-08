@@ -146,7 +146,7 @@ export default function Services() {
       <section className="section-container bg-gray-50">
         <div className="text-center mb-12">
           <h2 className="section-title">Additional Services</h2>
-          <p className="section-subtitle">
+          <p className="section-subtitle text-center">
             Additional services to support your Amazon business
           </p>
         </div>
@@ -165,7 +165,7 @@ export default function Services() {
       <section className="section-container">
         <div className="text-center mb-12">
           <h2 className="section-title">How We Work</h2>
-          <p className="section-subtitle">
+          <p className="section-subtitle text-center">
             A streamlined process that delivers results
           </p>
         </div>
