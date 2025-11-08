@@ -23,90 +23,45 @@ export default function Navbar() {
     { href: '/about', label: 'About Us' },
     { href: '/services', label: 'Services' },
     { href: '/case-studies', label: 'Case Studies' },
+    { href: '/before-and-after', label: 'Before & After' },
     { href: '/contact', label: 'Contact Us' },
   ];
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-              Eridecommerce
-            </span>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar">
+      <div className="container">
+        <div className="nav-wrapper">
+          <Link href="/" className="logo">
+            Eridecommerce
           </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`font-medium transition-colors duration-200 ${
-                  pathname === link.href
-                    ? 'text-primary-600 border-b-2 border-primary-600'
-                    : 'text-gray-700 hover:text-primary-600'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              href="/contact"
-              className="btn-primary text-sm px-4 py-2"
-            >
-              Get Started
-            </Link>
-          </div>
-
-          {/* Mobile menu button */}
           <button
+            className="mobile-menu-btn"
+            id="mobileMenuBtn"
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-gray-700 hover:text-primary-600 transition-colors"
+            aria-label="Toggle menu"
           >
-            {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            {isOpen ? <FiX size={20} /> : <FiMenu size={20} />}
           </button>
+          <ul className={`nav-menu ${isOpen ? 'active' : ''}`} id="navMenu">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={pathname === link.href ? 'active' : ''}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link href="/contact" className="btn-primary" onClick={() => setIsOpen(false)}>
+                Get Started
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
-
-      {/* Mobile Navigation */}
-      {isOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
-          <div className="px-4 pt-2 pb-4 space-y-2">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className={`block px-4 py-2 rounded-lg font-medium transition-colors ${
-                  pathname === link.href
-                    ? 'bg-primary-50 text-primary-600'
-                    : 'text-gray-700 hover:bg-gray-50'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              href="/contact"
-              onClick={() => setIsOpen(false)}
-              className="block w-full text-center btn-primary mt-4"
-            >
-              Get Started
-            </Link>
-          </div>
-        </div>
-      )}
     </nav>
   );
 }
-
-
-
-
-
-
