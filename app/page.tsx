@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FiArrowRight, FiCheck, FiTrendingUp, FiUsers, FiTarget, FiAward } from 'react-icons/fi';
 import Newsletter from '@/components/Newsletter';
+import AnimatedNumber from '@/components/AnimatedNumber';
 
 export default function Home() {
   const services = [
@@ -28,10 +29,10 @@ export default function Home() {
   ];
 
   const metrics = [
-    { value: '163%', label: 'Average Revenue Growth', color: 'text-green-600' },
-    { value: '70%', label: 'Cost Reduction', color: 'text-blue-600' },
-    { value: '91%', label: 'Client Retention Rate', color: 'text-purple-600' },
-    { value: '4.7x', label: 'Average ROAS', color: 'text-orange-600' },
+    { target: 163, suffix: '%', label: 'Average Revenue Growth', color: 'text-green-600' },
+    { target: 70, suffix: '%', label: 'Cost Reduction', color: 'text-blue-600' },
+    { target: 91, suffix: '%', label: 'Client Retention Rate', color: 'text-purple-600' },
+    { target: 4.7, suffix: 'x', label: 'Average ROAS', color: 'text-orange-600', decimals: 1 },
   ];
 
   const benefits = [
@@ -79,9 +80,13 @@ export default function Home() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {metrics.map((metric, index) => (
             <div key={index} className="text-center">
-              <div className={`text-4xl md:text-5xl font-bold mb-2 ${metric.color}`}>
-                {metric.value}
-              </div>
+              <AnimatedNumber
+                target={metric.target}
+                suffix={metric.suffix}
+                duration={2000}
+                decimals={metric.decimals || 0}
+                className={`text-4xl md:text-5xl font-bold mb-2 ${metric.color}`}
+              />
               <div className="text-gray-600 font-medium">{metric.label}</div>
             </div>
           ))}

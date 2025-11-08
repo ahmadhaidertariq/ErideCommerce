@@ -79,7 +79,7 @@ export default function About() {
           </div>
           <div className="relative h-96 rounded-xl overflow-hidden shadow-2xl slide-in-from-right animate">
             <Image
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800"
+              src="whatsapp-image-2025-11-09-at-10.38.02_1170x658.jpg"
               alt="Our Team"
               fill
               className="object-cover"
