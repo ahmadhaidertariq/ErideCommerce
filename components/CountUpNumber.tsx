@@ -89,7 +89,7 @@ export default function CountUpNumber({
 
   const displayValue = decimals > 0 
     ? currentValue.toFixed(decimals)
-    : currentValue.toString();
+    : Math.floor(currentValue).toString();
 
   return (
     <div 
