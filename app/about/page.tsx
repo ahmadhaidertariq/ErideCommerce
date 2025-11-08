@@ -52,7 +52,7 @@ export default function About() {
       {/* Story Section */}
       <section className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
+          <div className='slide-in-from-left animate'>
             <h2 className="section-title">Our Story</h2>
             <div className="space-y-4 text-lg text-gray-600">
               <p>
@@ -77,7 +77,7 @@ export default function About() {
               </p>
             </div>
           </div>
-          <div className="relative h-96 rounded-xl overflow-hidden shadow-2xl">
+          <div className="relative h-96 rounded-xl overflow-hidden shadow-2xl slide-in-from-right animate">
             <Image
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800"
               alt="Our Team"
