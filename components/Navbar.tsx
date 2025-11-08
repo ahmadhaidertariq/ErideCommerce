@@ -36,7 +36,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold  bg-clip-text text-transparent" style={{ background: 'linear-gradient(to right, #003d82, #1a3a6d, #ff6b35)' }}>
+            <span className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent" style={{ background: 'linear-gradient(to right, #003d82, #1a3a6d, #ff6b35) !important' }}>
               Eridecommerce
             </span>
           </Link>
