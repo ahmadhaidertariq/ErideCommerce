@@ -23,7 +23,7 @@ export default function Navbar() {
     { href: '/about', label: 'About Us' },
     { href: '/services', label: 'Services' },
     { href: '/case-studies', label: 'Case Studies' },
-    { href: '/before-and-after.html', label: 'Before & After' },
+    { href: '/before-and-after', label: 'Before & After' },
     { href: '/contact', label: 'Contact Us' },
   ];
 
