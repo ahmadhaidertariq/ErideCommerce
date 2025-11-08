@@ -66,7 +66,7 @@ export default function Home() {
               <Link href="/contact" className="btn-primary bg-white text-primary-600 hover:bg-gray-100">
                 Get Started Today
               </Link>
-              <Link href="/case-studies" className="btn-secondary border-white text-white hover:bg-white/10">
+              <Link href="/case-studies" className="btn-secondary border-white text-white hover:bg-white/10" style={{ backgroundColor: 'transparent' }}>
                 View Case Studies
               </Link>
             </div>
