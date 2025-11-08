@@ -21,7 +21,7 @@ export default function BeforeAndAfter() {
   };
 
   return (
-    <>
+    <div>
       {/* Hero Section */}
       <section className="before-after-hero">
         <div className="container" style={{ maxWidth: '100%' }}>
@@ -128,7 +128,7 @@ export default function BeforeAndAfter() {
 
       {/* Metrics Summary */}
       <section className="metrics-summary">
-        <div className="container" style={{ margin: 0 auto; textAlign: center;}}>
+        <div className="container" style={{ margin: '0 auto', textAlign: 'center' }}>
           <div className="section-header">
             <h2 className="section-title" style={{ color: 'var(--gray-900)' }}>Average Results</h2>
           </div>
@@ -163,7 +163,7 @@ export default function BeforeAndAfter() {
       </section>
 
       <Newsletter />
-    </>
+    </div>
   );
 }
 
