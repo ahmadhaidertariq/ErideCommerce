@@ -128,7 +128,7 @@ export default function BeforeAndAfter() {
 
       {/* Metrics Summary */}
       <section className="metrics-summary">
-        <div className="container">
+        <div className="container" style={{ margin: 0 auto; textAlign: center;}}>
           <div className="section-header">
             <h2 className="section-title" style={{ color: 'var(--gray-900)' }}>Average Results</h2>
           </div>
