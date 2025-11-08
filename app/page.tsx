@@ -188,7 +188,8 @@ export default function Home() {
           ].map((step, index) => (
             <div key={index} className="relative">
               <div className="card h-full">
-                <div className="text-6xl font-bold text-gray-100 mb-4">{step.step}</div>
+                <div className="text-6xl font-bold text-gray-100 mb-4"   style={{
+    background: 'linear-gradient(to right, #003d82, #ff6b35, #ff6b35)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', }}>{step.step}</div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">{step.title}</h3>
                 <p className="text-gray-600">{step.description}</p>
               </div>
