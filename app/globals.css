@@ -2,7 +2,7 @@
 
 /* Before & After Page Styles */
 .before-after-hero {
-  background: linear-gradient(135deg, var(--primary-600), var(--secondary-600));
+  background: linear-gradient(135deg, #003d82, #1a3a6d, #ff6b35);
   color: white;
   padding: 120px 0 80px;
   text-align: center;

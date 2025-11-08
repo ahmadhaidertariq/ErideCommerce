@@ -24,7 +24,7 @@ export default function BeforeAndAfter() {
     <>
       {/* Hero Section */}
       <section className="before-after-hero">
-        <div className="container">
+        <div className="container" style={{ maxWidth: '100%' }}>
           <h1 style={{ fontSize: '3.5rem', fontWeight: 800, marginBottom: '1.5rem' }}>
             Before & After Results
           </h1>

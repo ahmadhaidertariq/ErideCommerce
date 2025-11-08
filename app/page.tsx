@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-500 text-white overflow-hidden">
+      <section className="relative text-white overflow-hidden" style={{ background: 'linear-gradient(135deg, #003d82, #1a3a6d, #ff6b35)' }}>
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556740758-90de374c12ad?w=1920')] bg-cover bg-center"></div>
         </div>
