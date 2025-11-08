@@ -146,7 +146,7 @@ export default function Home() {
           </div>
           <div className="relative h-96 rounded-xl overflow-hidden shadow-2xl">
             <Image
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800"
+              src="/ac99ec1e-1ddf-4475-854e-f269c494b6ef_738x593.png"
               alt="Amazon Business Growth"
               fill
               className="object-cover"
