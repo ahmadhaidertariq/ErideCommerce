@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FiArrowRight, FiCheck, FiTrendingUp, FiBox, FiShoppingCart, FiTarget, FiAward, FiBarChart, FiFileText } from 'react-icons/fi';
 import Newsletter from '@/components/Newsletter';
+import AnimatedSection from '@/components/AnimatedSection';
 
 export default function Services() {
   const mainServices = [
@@ -98,47 +99,61 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Main Services */}
+      {/* Main Services with Animations */}
       <section className="section-container">
         <div className="space-y-24">
-          {mainServices.map((service, index) => (
-            <div
-              key={index}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-              }`}
-            >
-              <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                <div className="text-primary-600 mb-4">{service.icon}</div>
-                <h2 className="text-4xl font-bold text-gray-900 mb-4">{service.title}</h2>
-                <p className="text-xl text-gray-600 mb-6">{service.description}</p>
-                <ul className="space-y-3 mb-8">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start space-x-3">
-                      <div className="flex-shrink-0 w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center mt-0.5">
-                        <FiCheck className="text-primary-600" size={14} />
-                      </div>
-                      <span className="text-gray-700">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/contact" className="btn-primary inline-flex items-center space-x-2">
-                  <span>Get Started</span>
-                  <FiArrowRight />
-                </Link>
+          {mainServices.map((service, index) => {
+            // Determine animation classes based on section index
+            const imageAnimation = index === 0 || index === 2 
+              ? 'slide-in-from-right' 
+              : 'slide-in-from-left';
+            const textAnimation = index === 0 || index === 2 
+              ? 'slide-in-from-left' 
+              : 'slide-in-from-right';
+            
+            return (
+              <div
+                key={index}
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+                  index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                }`}
+              >
+                <AnimatedSection animationClass={textAnimation}>
+                  <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
+                    <div className="text-primary-600 mb-4">{service.icon}</div>
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4">{service.title}</h2>
+                    <p className="text-xl text-gray-600 mb-6">{service.description}</p>
+                    <ul className="space-y-3 mb-8">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start space-x-3">
+                          <div className="flex-shrink-0 w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center mt-0.5">
+                            <FiCheck className="text-primary-600" size={14} />
+                          </div>
+                          <span className="text-gray-700">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <Link href="/contact" className="btn-primary inline-flex items-center space-x-2">
+                      <span>Get Started</span>
+                      <FiArrowRight />
+                    </Link>
+                  </div>
+                </AnimatedSection>
+                <AnimatedSection animationClass={imageAnimation}>
+                  <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
+                    <div className="relative h-96 rounded-xl overflow-hidden shadow-2xl">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
+                </AnimatedSection>
               </div>
-              <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                <div className="relative h-96 rounded-xl overflow-hidden shadow-2xl">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
