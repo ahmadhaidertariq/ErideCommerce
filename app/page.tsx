@@ -201,7 +201,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-container bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-2xl">
+      <section className="section-container bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-2xl mb-12">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to Scale Your Amazon Business?
