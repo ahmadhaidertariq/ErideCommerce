@@ -35,11 +35,13 @@ export default function ContactForm() {
         body: JSON.stringify(formData),
       });
 
+      const data = await response.json();
+      
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to send message');
+        throw new Error(data.error || 'Failed to send message');
       }
 
+      console.log('Email sent successfully:', data);
       setStatus('success');
 
       // Reset form after 3 seconds

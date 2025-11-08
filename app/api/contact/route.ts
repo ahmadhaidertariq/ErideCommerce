@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Send email using Resend
-    await resend.emails.send({
+    const result = await resend.emails.send({
       from: 'Eridecommerce <onboarding@resend.dev>', // Will work for testing, verify domain later for production
       to: 'info@eridecommerce.com',
       reply_to: email,
@@ -43,14 +43,24 @@ export async function POST(request: NextRequest) {
       `,
     });
 
+    // Check if email was sent successfully
+    if (result.error) {
+      console.error('Resend API error:', result.error);
+      return NextResponse.json(
+        { error: `Failed to send email: ${result.error.message || 'Unknown error'}` },
+        { status: 500 }
+      );
+    }
+
+    console.log('Email sent successfully:', result.data);
     return NextResponse.json(
-      { message: 'Email sent successfully' },
+      { message: 'Email sent successfully', id: result.data?.id },
       { status: 200 }
     );
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error sending email:', error);
     return NextResponse.json(
-      { error: 'Failed to send email' },
+      { error: `Failed to send email: ${error?.message || 'Unknown error'}` },
       { status: 500 }
     );
   }
