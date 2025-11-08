@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend
     const result = await resend.emails.send({
-      from: 'Eridecommerce <onboarding@resend.dev>', // Will work for testing, verify domain later for production
+      from: `${name} <${email}>`,
       to: 'info@eridecommerce.com',
       reply_to: email,
       subject: `Contact Form Submission from ${name}`,
