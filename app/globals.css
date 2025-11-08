@@ -272,7 +272,6 @@
 }
 
 .count-up-animate::before {
-  content: counter(num, decimal);
   animation: countUp var(--duration, 2000ms) ease-out forwards;
 }
 
