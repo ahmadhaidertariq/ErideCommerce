@@ -245,11 +245,11 @@
 }
 
 .slide-in-from-right.animate {
-  animation: slideInFromRight 2.5s ease-out forwards;
+  animation: slideInFromRight 1.5s ease-out forwards;
 }
 
 .slide-in-from-left.animate {
-  animation: slideInFromLeft 2.5s ease-out forwards;
+  animation: slideInFromLeft 1.5s ease-out forwards;
 }
 
 
