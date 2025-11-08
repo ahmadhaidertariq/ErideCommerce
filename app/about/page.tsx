@@ -106,7 +106,7 @@ export default function About() {
       <section className="section-container">
         <div className="text-center mb-12">
           <h2 className="section-title">Our Values</h2>
-          <p className="section-subtitle text-center">
+          <p className="section-subtitle text-center" style={{ margin: '30px auto' }}>
             The principles that guide everything we do
           </p>
         </div>

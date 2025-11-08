@@ -27,44 +27,19 @@ export default function ContactForm() {
     setStatus('sending');
 
     try {
-      // EmailJS functionality commented out for now
-      // TODO: Install @emailjs/browser package and uncomment when ready
-      // const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '';
-      // const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '';
-      // const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '';
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-      // if (serviceId && templateId && publicKey) {
-      //   const emailjs = await import('@emailjs/browser');
-      //   await emailjs.send(
-      //     serviceId,
-      //     templateId,
-      //     {
-      //       to_email: 'info@eridecommerce.com',
-      //       from_name: formData.name,
-      //       from_email: formData.email,
-      //       phone: formData.phone,
-      //       company: formData.company,
-      //       message: formData.message,
-      //     },
-      //     publicKey
-      //   );
-      //   setStatus('success');
-      // } else {
-      //   // Fallback: Create mailto link
-      //   const subject = encodeURIComponent('Contact Form Submission from Eridecommerce');
-      //   const body = encodeURIComponent(
-      //     `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCompany: ${formData.company}\n\nMessage:\n${formData.message}`
-      //   );
-      //   window.location.href = `mailto:info@eridecommerce.com?subject=${subject}&body=${body}`;
-      //   setStatus('success');
-      // }
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to send message');
+      }
 
-      // Using mailto link as fallback
-      const subject = encodeURIComponent('Contact Form Submission from Eridecommerce');
-      const body = encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCompany: ${formData.company}\n\nMessage:\n${formData.message}`
-      );
-      window.location.href = `mailto:info@eridecommerce.com?subject=${subject}&body=${body}`;
       setStatus('success');
 
       // Reset form after 3 seconds
@@ -99,6 +74,7 @@ export default function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             required
+            placeholder="John"
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
           />
         </div>
@@ -113,6 +89,7 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             required
+            placeholder="john@example.com"
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
           />
         </div>
@@ -129,6 +106,7 @@ export default function ContactForm() {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
+            placeholder="123-456-7890"
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
           />
         </div>
