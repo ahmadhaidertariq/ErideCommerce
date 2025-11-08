@@ -1,5 +1,6 @@
+import React from 'react';
 import ContactForm from '@/components/ContactForm';
-import { FiMail, FiPhone, FiMapPin, FiClock } from 'react-icons/fi';
+import { FiMail, FiClock } from 'react-icons/fi';
 import Newsletter from '@/components/Newsletter';
 
 export default function Contact() {
