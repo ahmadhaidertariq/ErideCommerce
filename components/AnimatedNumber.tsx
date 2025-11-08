@@ -20,65 +20,93 @@ export default function AnimatedNumber({
   const [currentValue, setCurrentValue] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const animationRef = useRef<number | null>(null);
 
   useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
+    let animated = false;
+
+    const startAnimation = () => {
+      if (animated) return;
+      animated = true;
+      setHasAnimated(true);
+      
+      const startTime = Date.now();
+      const startValue = 0;
+      const animDuration = duration;
+      const animTarget = target;
+      const animDecimals = decimals;
+      
+      const animate = () => {
+        const now = Date.now();
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / animDuration, 1);
+        
+        // Easing function for smooth animation
+        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+        
+        const newValue = startValue + (animTarget - startValue) * easeOutQuart;
+        
+        if (animDecimals > 0) {
+          setCurrentValue(parseFloat(newValue.toFixed(animDecimals)));
+        } else {
+          setCurrentValue(Math.floor(newValue));
+        }
+        
+        if (progress < 1) {
+          animationRef.current = requestAnimationFrame(animate);
+        } else {
+          // Ensure final value is exact
+          if (animDecimals > 0) {
+            setCurrentValue(parseFloat(animTarget.toFixed(animDecimals)));
+          } else {
+            setCurrentValue(animTarget);
+          }
+        }
+      };
+      
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAnimated) {
-            setHasAnimated(true);
-            
-            const startTime = Date.now();
-            const startValue = 0;
-            
-            const animate = () => {
-              const now = Date.now();
-              const elapsed = now - startTime;
-              const progress = Math.min(elapsed / duration, 1);
-              
-              // Easing function for smooth animation
-              const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-              
-              const newValue = startValue + (target - startValue) * easeOutQuart;
-              
-              if (decimals > 0) {
-                setCurrentValue(parseFloat(newValue.toFixed(decimals)));
-              } else {
-                setCurrentValue(Math.floor(newValue));
-              }
-              
-              if (progress < 1) {
-                requestAnimationFrame(animate);
-              } else {
-                // Ensure final value is exact
-                if (decimals > 0) {
-                  setCurrentValue(parseFloat(target.toFixed(decimals)));
-                } else {
-                  setCurrentValue(target);
-                }
-              }
-            };
-            
-            requestAnimationFrame(animate);
+          if (entry.isIntersecting && !animated) {
+            startAnimation();
           }
         });
       },
       {
-        threshold: 0.3,
-        rootMargin: '0px 0px -50px 0px',
+        threshold: 0.1,
+        rootMargin: '50px',
       }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+    // Check if already visible on mount
+    const checkAndObserve = () => {
+      const rect = element.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight + 100 && rect.bottom > -100;
+      
+      if (isVisible && !animated) {
+        setTimeout(startAnimation, 300);
+      } else {
+        observer.observe(element);
       }
     };
-  }, [target, duration, hasAnimated, decimals]);
+
+    // Delay to ensure component is fully mounted
+    const timeoutId = setTimeout(checkAndObserve, 150);
+
+    return () => {
+      clearTimeout(timeoutId);
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+      observer.disconnect();
+    };
+  }, [target, duration, decimals]); // Include dependencies
 
   const displayValue = decimals > 0 
     ? currentValue.toFixed(decimals) 
@@ -90,4 +118,3 @@ export default function AnimatedNumber({
     </div>
   );
 }
-
