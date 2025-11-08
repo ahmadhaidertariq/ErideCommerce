@@ -4,7 +4,7 @@ import Newsletter from '@/components/Newsletter';
 
 export default function Contact() {
   return (
-    <>
+    <div>
       <section className="relative bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-500 text-white py-20 lg:py-32">
         <div className="section-container">
           <div className="max-w-4xl mx-auto text-center">
@@ -17,7 +17,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
       <section className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
@@ -31,7 +30,6 @@ export default function Contact() {
             </p>
             <ContactForm />
           </div>
-
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Contact Information</h2>
             <div className="space-y-6 mb-8">
@@ -49,7 +47,6 @@ export default function Contact() {
                   </a>
                 </div>
               </div>
-
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
                   <FiClock className="text-primary-600" size={24} />
@@ -60,7 +57,6 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-
             <div className="bg-gray-50 rounded-xl p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-4">What Happens Next?</h3>
               <ol className="space-y-4">
@@ -101,7 +97,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
       <section className="section-container bg-gray-50">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="section-title">Have Questions?</h2>
@@ -124,8 +119,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
       <Newsletter />
-    </>
+    </div>
   );
 }
