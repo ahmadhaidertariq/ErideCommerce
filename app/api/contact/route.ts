@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
     await resend.emails.send({
       from: 'Eridecommerce <onboarding@resend.dev>', // Will work for testing, verify domain later for production
       to: 'info@eridecommerce.com',
-      replyTo: email,
+      reply_to: email,
       subject: `Contact Form Submission from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
