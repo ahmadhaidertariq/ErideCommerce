@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { FiArrowRight, FiCheck, FiTrendingUp, FiUsers, FiTarget, FiAward, FiChartLine } from 'react-icons/fi';
+import { FiArrowRight, FiCheck, FiTrendingUp, FiUsers, FiTarget, FiAward } from 'react-icons/fi';
 import Newsletter from '@/components/Newsletter';
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
       description: 'Complete private label solutions from product research to launch and optimization.',
     },
     {
-      icon: <FiChartLine size={32} />,
+      icon: <FiTrendingUp size={32} />,
       title: 'Wholesale Management',
       description: 'Strategic wholesale operations to maximize your Amazon presence and profitability.',
     },
