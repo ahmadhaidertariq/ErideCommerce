@@ -124,7 +124,7 @@ export default function Home() {
       {/* Benefits Section */}
       <section className="section-container bg-gray-50">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
+          <div className='slide-in-from-left animate'>
             <h2 className="section-title">
               Why Choose Eridecommerce?
             </h2>
@@ -149,7 +149,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="relative h-96 rounded-xl overflow-hidden shadow-2xl">
+          <div className="relative h-96 rounded-xl overflow-hidden shadow-2xl shadow-2xl slide-in-from-right animate">
             <Image
               src="/ac99ec1e-1ddf-4475-854e-f269c494b6ef_738x593.png"
               alt="Amazon Business Growth"
