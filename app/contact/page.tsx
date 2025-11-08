@@ -1,4 +1,3 @@
-import React from 'react';
 import ContactForm from '@/components/ContactForm';
 import { FiMail, FiClock } from 'react-icons/fi';
 import Newsletter from '@/components/Newsletter';
@@ -135,9 +134,3 @@ export default function Contact() {
     </>
   );
 }
-
-
-
-
-
-
