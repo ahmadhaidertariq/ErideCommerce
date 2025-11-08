@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
     // Send email using Resend
     const result = await resend.emails.send({
       from: `${name} <${email}>`,
-      to: 'info@eridecommerce.com',
+      to: 'asadmahmood9284@gmail.com',
       reply_to: email,
       subject: `Contact Form Submission from ${name}`,
       html: `
