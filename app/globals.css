@@ -252,6 +252,54 @@
   animation: slideInFromLeft 1.5s ease-out forwards;
 }
 
+/* Count Up Number Animation */
+.count-up-number {
+  display: inline-block;
+}
+
+@keyframes countUp {
+  from {
+    --count: 0;
+  }
+  to {
+    --count: var(--target, 0);
+  }
+}
+
+.count-up-animate {
+  animation: countUp var(--duration, 2000ms) ease-out forwards;
+  counter-reset: num var(--count);
+}
+
+.count-up-animate::before {
+  content: counter(num, decimal);
+  animation: countUp var(--duration, 2000ms) ease-out forwards;
+}
+
+/* Alternative simpler approach using opacity and transform */
+@keyframes numberFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.count-up-number {
+  opacity: 0;
+  transform: translateY(20px) scale(0.8);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.count-up-number.count-up-animate {
+  animation: numberFadeIn 1.5s ease-out forwards;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
 
 
 

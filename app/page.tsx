@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FiArrowRight, FiCheck, FiTrendingUp, FiUsers, FiTarget, FiAward } from 'react-icons/fi';
 import Newsletter from '@/components/Newsletter';
-import AnimatedNumber from '@/components/AnimatedNumber';
+import CountUpNumber from '@/components/CountUpNumber';
 
 export default function Home() {
   const services = [
@@ -80,7 +80,7 @@ export default function Home() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {metrics.map((metric, index) => (
             <div key={index} className="text-center">
-              <AnimatedNumber
+              <CountUpNumber
                 target={metric.target}
                 suffix={metric.suffix}
                 duration={2000}

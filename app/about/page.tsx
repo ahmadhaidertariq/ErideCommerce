@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { FiUsers, FiTarget, FiAward, FiTrendingUp } from 'react-icons/fi';
 import Newsletter from '@/components/Newsletter';
+import CountUpNumber from '@/components/CountUpNumber';
 
 export default function About() {
   const values = [
@@ -27,10 +28,10 @@ export default function About() {
   ];
 
   const stats = [
-    { number: '500+', label: 'Brands Managed' },
-    { number: '91%', label: 'Client Retention Rate' },
-    { number: '163%', label: 'Avg Revenue Growth' },
-    { number: '4.7x', label: 'Average ROAS' },
+    { target: 500, suffix: '+', label: 'Brands Managed' },
+    { target: 91, suffix: '%', label: 'Client Retention Rate' },
+    { target: 163, suffix: '%', label: 'Avg Revenue Growth' },
+    { target: 4.7, suffix: 'x', label: 'Average ROAS', decimals: 1 },
   ];
 
   return (
@@ -82,7 +83,7 @@ export default function About() {
               src="/2_52498226.jpg"
               alt="Our Team"
               fill
-              className="object-cover"
+              className="object-contain"
             />
           </div>
         </div>
@@ -93,9 +94,13 @@ export default function About() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-5xl md:text-6xl font-bold text-primary-600 mb-2">
-                {stat.number}
-              </div>
+              <CountUpNumber
+                target={stat.target}
+                suffix={stat.suffix}
+                duration={2000}
+                decimals={stat.decimals || 0}
+                className="text-5xl md:text-6xl font-bold text-primary-600 mb-2"
+              />
               <div className="text-gray-600 font-medium text-lg">{stat.label}</div>
             </div>
           ))}
