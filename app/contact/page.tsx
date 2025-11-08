@@ -5,7 +5,6 @@ import Newsletter from '@/components/Newsletter';
 export default function Contact() {
   return (
     <>
-      {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-500 text-white py-20 lg:py-32">
         <div className="section-container">
           <div className="max-w-4xl mx-auto text-center">
@@ -19,10 +18,8 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact Section */}
       <section className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
             <p className="text-gray-600 mb-8">
@@ -35,7 +32,6 @@ export default function Contact() {
             <ContactForm />
           </div>
 
-          {/* Contact Info */}
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Contact Information</h2>
             <div className="space-y-6 mb-8">
@@ -106,7 +102,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* FAQ Preview */}
       <section className="section-container bg-gray-50">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="section-title">Have Questions?</h2>
