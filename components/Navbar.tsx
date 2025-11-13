@@ -44,7 +44,8 @@ export default function Navbar() {
     WebkitTextFillColor: 'transparent',
   }}
 >
-  Eridecommerce
+  icon
+  <Image src="/logo.png" alt="Eridecommerce" width={100} height={100} />
 </span>
 
           </Link>
