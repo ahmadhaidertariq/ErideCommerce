@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FiMenu, FiX } from 'react-icons/fi';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,19 +36,29 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link href="/" className="flex items-center space-x-2">
-          <span
-  className="text-2xl font-bold bg-clip-text text-transparent"
-  style={{
-    background: 'linear-gradient(to right, #003d82, #1a3a6d, #ff6b35)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-  }}
->
-  icon
-  <Image src="/logo.png" alt="Eridecommerce" width={100} height={100} />
-</span>
 
+          {/* Logo + Brand Name */}
+          <Link href="/" className="flex items-center space-x-3">
+            {/* Gradient Brand Text */}
+            <span
+              className="text-2xl font-bold bg-clip-text text-transparent"
+              style={{
+                background: 'linear-gradient(to right, #003d82, #1a3a6d, #ff6b35)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              icon
+            </span>
+
+            {/* Logo Image */}
+            <Image
+              src="/logo.png"
+              alt="Eridecommerce"
+              width={60}
+              height={60}
+              className="object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -65,15 +76,12 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/contact"
-              className="btn-primary text-sm px-4 py-2"
-            >
+            <Link href="/contact" className="btn-primary text-sm px-4 py-2">
               Get Started
             </Link>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden text-gray-700 hover:text-primary-600 transition-colors"
@@ -114,9 +122,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
-
-
-
-
-
